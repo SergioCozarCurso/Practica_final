@@ -2,7 +2,6 @@
 function escucharClickBoton(){
 
     const botonGuardar = document.getElementById("btn-guardar-cliente");
-
   
     botonGuardar.addEventListener("click", (_event) => {
 
@@ -10,16 +9,15 @@ function escucharClickBoton(){
         let passwordInput = document.querySelector("[name='password']").value
         let correoInput = document.querySelector("[name='correo']").value
         let saldoInput = document.querySelector("[name='saldo']").value
-        let idGestorInput = document.querySelector("[name='idGestor']").value
 
-        
+        let gestor = JSON.parse(sessionStorage.getItem("miUsuario"))        
 
         const nuevoCliente = {
             usuario: usuarioInput,
             password: passwordInput,
             correo: correoInput,
             saldo: Number(saldoInput),
-            gestor: {id: Number(idGestorInput)}
+            gestor: {id: gestor.id}
         }
     
         const optionsPost = {
@@ -33,18 +31,15 @@ function escucharClickBoton(){
         fetch('http://localhost:8080/cliente', optionsPost)
             .then(response => response.json())
             .then(cliente => {
-                respuestaContainer = document.getElementById("respuesta-container")
-                respuestaContainer.innerHTML = `
-                    <h3>Cliente creado: </h3>
-                    <p>Id: ${cliente.id}</p>
-                    <p>Usuario: ${cliente.usuario}</p>
-                    <p>Password: ${cliente.password}</p>
-                    <p>Correo: ${cliente.correo}</p>
-                    <p>Saldo: ${cliente.saldo}</p>
-                    
-                `;
+                console.log(cliente);
+                alertCreado = document.getElementById("alertCreado")
+                alertCreado.setAttribute("style", "display: block")
+                
+                setTimeout(() => {
+                    alertCreado.setAttribute("style", "display: none")
+                }, 1500);
             })
-            .catch(err => console.log(err))
+            
 
     })
     

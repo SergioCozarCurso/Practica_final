@@ -12,8 +12,18 @@ function escucharClickBotonLogin() {
     fetch(`http://localhost:8080/gestor/login${query}`)
     .then(response => response.json())
     .then(gestor => {
+        
         console.log(gestor);
         
+        sessionStorage.setItem("miUsuario", JSON.stringify(gestor));
+
+        alertCreado = document.getElementById("alertCreado")
+        alertCreado.setAttribute("style", "display: block")
+        
+        setTimeout(() => {
+            alertCreado.setAttribute("style", "display: none")
+        }, 1500);
+
      })
 })
 

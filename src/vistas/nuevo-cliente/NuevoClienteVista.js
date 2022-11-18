@@ -6,7 +6,7 @@ export default class extends Vista {
 
     constructor() {
         super()        
-        this.setTitulo("Nuevo Gestor")
+        this.setTitulo("Nuevo Cliente")
     }
 
     async getHTML() {

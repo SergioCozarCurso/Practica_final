@@ -27,14 +27,13 @@ function escucharClickBoton(){
         fetch('http://localhost:8080/gestor', optionsPost)
             .then(response => response.json())
             .then(gestor => {
-                respuestaContainer = document.getElementById("respuesta-container")
-                respuestaContainer.innerHTML = `
-                    <h3>Gestor creado: </h3>
-                    <p>Id: ${gestor.id}</p>
-                    <p>Usuario: ${gestor.usuario}</p>
-                    <p>Password: ${gestor.password}</p>
-                    <p>Correo: ${gestor.correo}</p>
-                `;
+                console.log({gestor});
+                alertCreado = document.getElementById("alertCreado")
+                alertCreado.setAttribute("style", "display: block")
+                
+                setTimeout(() => {
+                    alertCreado.setAttribute("style", "display: none")
+                }, 1500);
             })
 
     })

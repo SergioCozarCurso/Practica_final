@@ -11,12 +11,12 @@ const router = async () => {
     // nuestras rutas
     const rutas = [
         // indicamos la ruta y la clase para cargar la vista
-        { path: "/", view: InicioVista },
-        { path: "/login", view: LoginVista },
-        { path: "/mi-perfil-gestor", view: MiPerfilGestorVista },
-        { path: "/nuevo-gestor", view: NuevoGestorVista },
-        { path: "/mi-perfil-cliente", view: MiPerfilClienteVista },
-        { path: "/nuevo-cliente", view: NuevoClienteVista },
+        { path: "/", view: InicioVista, hasLogin: false },
+        { path: "/login", view: LoginVista, hasLogin: false},
+        { path: "/mi-perfil-gestor", view: MiPerfilGestorVista, hasLogin: true },
+        { path: "/nuevo-gestor", view: NuevoGestorVista,  hasLogin: true },
+        { path: "/mi-perfil-cliente", view: MiPerfilClienteVista, hasLogin: true },
+        { path: "/nuevo-cliente", view: NuevoClienteVista, hasLogin: true },
         { path: "/not-found", view: NotFoundVista }
     ]
 
@@ -40,6 +40,14 @@ const router = async () => {
         rutaActual = {
             ruta: rutaPorDefecto,
             coincide: true
+        }
+    }
+
+    if(rutaActual.ruta.hasLogin){
+        const usuarioGuardado = sessionStorage.getItem("miUsuario")
+        if(usuarioGuardado == null){
+            navegarA("/login")
+            return;
         }
     }
 
