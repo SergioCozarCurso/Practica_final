@@ -1,6 +1,9 @@
 import InicioVista from "./vistas/inicio/InicioVista.js"
-import MiPerfilVista from "./vistas/mi-perfil/MiPerfilVista.js"
+import LoginVista from "./vistas/login/LoginVista.js"
+import MiPerfilClienteVista from "./vistas/mi-perfil-cliente/MiPerfilClienteVista.js"
+import MiPerfilGestorVista from "./vistas/mi-perfil-gestor/MiPerfilGestorVista.js"
 import NotFoundVista from "./vistas/not-found/NotFoundVista.js"
+import NuevoClienteVista from "./vistas/nuevo-cliente/NuevoClienteVista.js"
 import NuevoGestorVista from "./vistas/nuevo-gestor/NuevoGestorVista.js"
 
 // para controlar las rutas de la aplicación
@@ -8,10 +11,13 @@ const router = async () => {
     // nuestras rutas
     const rutas = [
         // indicamos la ruta y la clase para cargar la vista
-        { path: "/not-found", view: NotFoundVista },
-        { path: "/mi-perfil", view: MiPerfilVista },
+        { path: "/", view: InicioVista },
+        { path: "/login", view: LoginVista },
+        { path: "/mi-perfil-gestor", view: MiPerfilGestorVista },
         { path: "/nuevo-gestor", view: NuevoGestorVista },
-        { path: "/", view: InicioVista }
+        { path: "/mi-perfil-cliente", view: MiPerfilClienteVista },
+        { path: "/nuevo-cliente", view: NuevoClienteVista },
+        { path: "/not-found", view: NotFoundVista }
     ]
 
     // la ruta que cargaremos si se intenta navegar a una que no existe

@@ -27,7 +27,6 @@ function escucharClickBoton(){
         fetch('http://localhost:8080/gestor', optionsPost)
             .then(response => response.json())
             .then(gestor => {
-                console.log({gestor});
                 respuestaContainer = document.getElementById("respuesta-container")
                 respuestaContainer.innerHTML = `
                     <h3>Gestor creado: </h3>

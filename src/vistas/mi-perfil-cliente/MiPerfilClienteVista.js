@@ -9,7 +9,7 @@ export default class extends Vista {
     }
 
     async getHTML() {
-        super.getHTML("/mi-perfil/mi-perfil.html", 
-                      "/mi-perfil/mi-perfil.js")
+        super.getHTML("/mi-perfil-cliente/mi-perfil.html", 
+                      "/mi-perfil-cliente/mi-perfil.js")
     }
 }
