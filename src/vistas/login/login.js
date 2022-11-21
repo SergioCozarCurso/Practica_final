@@ -12,8 +12,16 @@ function escucharClickBotonLogin() {
     fetch(`http://localhost:8080/gestor/login${query}`)
     .then(response => response.json())
     .then(gestor => {
-        
-        console.log(gestor);
+
+        if(!gestor){
+            alertError = document.getElementById("alertError")
+            alertError.setAttribute("style", "display: block")
+            
+            setTimeout(() => {
+                alertError.setAttribute("style", "display: none")
+            }, 1500);
+                return;
+            }
         
         sessionStorage.setItem("miUsuario", JSON.stringify(gestor));
 

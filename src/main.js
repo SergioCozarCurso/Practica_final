@@ -5,6 +5,7 @@ import MiPerfilGestorVista from "./vistas/mi-perfil-gestor/MiPerfilGestorVista.j
 import NotFoundVista from "./vistas/not-found/NotFoundVista.js"
 import NuevoClienteVista from "./vistas/nuevo-cliente/NuevoClienteVista.js"
 import NuevoGestorVista from "./vistas/nuevo-gestor/NuevoGestorVista.js"
+import ClientesVista from "./vistas/clientes/ClientesVista.js"
 
 // para controlar las rutas de la aplicación
 const router = async () => {
@@ -17,6 +18,7 @@ const router = async () => {
         { path: "/nuevo-gestor", view: NuevoGestorVista,  hasLogin: true },
         { path: "/mi-perfil-cliente", view: MiPerfilClienteVista, hasLogin: true },
         { path: "/nuevo-cliente", view: NuevoClienteVista, hasLogin: true },
+        { path: "/clientes", view: ClientesVista, hasLogin: true },
         { path: "/not-found", view: NotFoundVista }
     ]
 

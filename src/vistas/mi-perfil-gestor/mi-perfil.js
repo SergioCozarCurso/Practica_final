@@ -13,7 +13,7 @@ function getMiPerfil() {
         fetch('http://localhost:8080/gestor/' + miUsuario.id)
         .then(response => response.json())
         .then(gestor => {
-            console.log("gestor: ", gestor);
+          
             
             const contenedorUsuario = document.getElementById("contenedor-usuario");
             contenedorUsuario.innerHTML = gestor.usuario

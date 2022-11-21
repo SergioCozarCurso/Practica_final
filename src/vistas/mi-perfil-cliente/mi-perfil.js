@@ -7,8 +7,7 @@ function getMiPerfil() {
     fetch('http://localhost:8080/cliente/' + idCliente)
         .then(response => response.json())
         .then(cliente => {
-            console.log("Cliente: ", cliente);
-          
+                  
             const contenedorUsuario = document.getElementById("contenedor-usuario");
             contenedorUsuario.innerHTML = cliente.usuario
 

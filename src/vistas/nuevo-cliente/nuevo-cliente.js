@@ -31,7 +31,7 @@ function escucharClickBoton(){
         fetch('http://localhost:8080/cliente', optionsPost)
             .then(response => response.json())
             .then(cliente => {
-                console.log(cliente);
+           
                 alertCreado = document.getElementById("alertCreado")
                 alertCreado.setAttribute("style", "display: block")
                 

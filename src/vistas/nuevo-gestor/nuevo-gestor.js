@@ -27,7 +27,7 @@ function escucharClickBoton(){
         fetch('http://localhost:8080/gestor', optionsPost)
             .then(response => response.json())
             .then(gestor => {
-                console.log({gestor});
+           
                 alertCreado = document.getElementById("alertCreado")
                 alertCreado.setAttribute("style", "display: block")
                 
