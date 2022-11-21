@@ -15,7 +15,7 @@ const router = async () => {
         { path: "/", view: InicioVista, hasLogin: false },
         { path: "/login", view: LoginVista, hasLogin: false},
         { path: "/mi-perfil-gestor", view: MiPerfilGestorVista, hasLogin: true },
-        { path: "/nuevo-gestor", view: NuevoGestorVista,  hasLogin: true },
+        { path: "/nuevo-gestor", view: NuevoGestorVista,  hasLogin: false },
         { path: "/mi-perfil-cliente", view: MiPerfilClienteVista, hasLogin: true },
         { path: "/nuevo-cliente", view: NuevoClienteVista, hasLogin: true },
         { path: "/clientes", view: ClientesVista, hasLogin: true },
@@ -87,3 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
     // procesamos la ruta al cargar la aplicación
     router()
 })
+
+
+let contraseñas = document.querySelectorAll(".password")
+
+contraseñas.setAttribute

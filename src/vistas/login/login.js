@@ -30,6 +30,7 @@ function escucharClickBotonLogin() {
         
         setTimeout(() => {
             alertCreado.setAttribute("style", "display: none")
+            window.location.href = '/mi-perfil-gestor';
         }, 1500);
 
      })
