@@ -1,11 +1,13 @@
 import InicioVista from "./vistas/inicio/InicioVista.js"
 import LoginVista from "./vistas/login/LoginVista.js"
-import MiPerfilClienteVista from "./vistas/mi-perfil-cliente/MiPerfilClienteVista.js"
+import PerfilClienteVista from "./vistas/perfil-cliente/PerfilClienteVista.js"
 import MiPerfilGestorVista from "./vistas/mi-perfil-gestor/MiPerfilGestorVista.js"
 import NotFoundVista from "./vistas/not-found/NotFoundVista.js"
 import NuevoClienteVista from "./vistas/nuevo-cliente/NuevoClienteVista.js"
 import NuevoGestorVista from "./vistas/nuevo-gestor/NuevoGestorVista.js"
 import ClientesVista from "./vistas/clientes/ClientesVista.js"
+import TransferenciasVista from "./vistas/transferencias/TransferenciasVista.js"
+
 
 // para controlar las rutas de la aplicación
 const router = async () => {
@@ -16,9 +18,10 @@ const router = async () => {
         { path: "/login", view: LoginVista, hasLogin: false},
         { path: "/mi-perfil-gestor", view: MiPerfilGestorVista, hasLogin: true },
         { path: "/nuevo-gestor", view: NuevoGestorVista,  hasLogin: false },
-        { path: "/mi-perfil-cliente", view: MiPerfilClienteVista, hasLogin: true },
+        { path: "/perfil-cliente", view: PerfilClienteVista, hasLogin: true },
         { path: "/nuevo-cliente", view: NuevoClienteVista, hasLogin: true },
         { path: "/clientes", view: ClientesVista, hasLogin: true },
+        { path: "/transferencias", view: TransferenciasVista, hasLogin: true },
         { path: "/not-found", view: NotFoundVista }
     ]
 

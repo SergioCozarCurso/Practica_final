@@ -1,25 +1,22 @@
-function mainClientes(){
-    let clientesArr = [];
-    const clientesContainer = document.getElementById("clientes-container")
-    const btnAllClientes = document.getElementById("btnAllClientes")
-    const btnMisClientes = document.getElementById("btnMisClientes")
+function mainTransferencias(){
+    let transferenciasArr = [];
+    const transferenciasContainer = document.getElementById("transferencias-container")
 
-   
 
-    function imprimirClientes(clientes){
+   /*  function imprimirTransferencias(transferencias){
         if(clientes.length>0){
     
+            let clientePar = 0;
 
             clientes.forEach(cliente => {
+                clientePar++;
                 let img = ''
 
-                if (cliente.id%2==0){
-                    img = `https://xsgames.co/randomusers/assets/avatars/male/${cliente.id}.jpg`
+                if (clientePar%2==0){
+                    img = `https://xsgames.co/randomusers/assets/avatars/male/${clientePar}.jpg`
                 }else{
-                    img = `https://xsgames.co/randomusers/assets/avatars/female/${cliente.id}.jpg`
+                    img = `https://xsgames.co/randomusers/assets/avatars/female/${clientePar}.jpg`
                 }
-
-               
 
                 clientesContainer.innerHTML += `
                     <div class="card m-3 col-6" style="max-width: 540px; border: 1px solid black">
@@ -39,44 +36,55 @@ function mainClientes(){
                              </div>
                         </div>
                         <div class="d-flex justify-content-end p-1"  style="border-top: 1px solid black;">
-                            <button class="btn btn-outline-secondary me-2" id="btnTransferencias" 
-                                onclick="window.location.href = '/perfil-cliente?idCliente=${cliente.id}&img=${cliente.id}'">Ver transferencias
-                            </button>
+                        <button class="btn btn-outline-secondary me-2">Ver transferencias</button>
                             <button class="btn btn-outline-danger">Eliminar</button>
                         </div>
                     </div>
                 `
-             
-
             });
         }else{
             clientesContainer.innerHTML += `<p class="mt-3">No se ha podido encontrar ningún cliente.</p>`
         }
-    }
+    } */
 
 
-    function getClientes() {
-
-        btnMisClientes.classList.remove("active")
-        btnAllClientes.classList.add("active")
+    function getTransferencias() {
     
-        return fetch('http://localhost:8080/cliente')
+        return fetch('http://localhost:8080/transferencia')
         .then(response => response.json())
-        .then(clientes => {
-            clientesArr = clientes
-            clientesContainer.innerHTML = ""
-            
-           imprimirClientes(clientes);
+        .then(transferencias => {
+            transferenciasArr = transferencias
+            transferenciasContainer.innerHTML = ``
+    
+            console.log(transferencias);
+            //imprimirTransferencias(transferencias);
+
+            transferencias.forEach(transferencia => {
+
+                transferenciasContainer.innerHTML += 
+                `
+                <li class="list-group-item p-4">
+                <b> Id: </b> ${transferencia.id}.
+                <b> Importe:</b> ${transferencia.importe}.
+                <b> Ordenante:</b> ${transferencia.clienteOrdenante.usuario}.
+                <b> Beneficiario:</b> ${transferencia.clienteBeneficiario.usuario}.
+                <b> Concepto:</b> ${transferencia.concepto}.
+                <b> Fecha:</b> ${transferencia.fecha}.
+                </li>
+         
+                `
+                
+            });
     
            
         })
         
     }
-    getClientes()
+    getTransferencias()
 
  
 
-    function getClientesGestor(){
+    /* function getClientesGestor(){
 
         btnMisClientes.classList.add("active")
         btnAllClientes.classList.remove("active")
@@ -92,11 +100,9 @@ function mainClientes(){
 
     btnMisClientes.addEventListener("click", (_event) => {
         getClientesGestor()
-    })
-
-    
+    }) */
 }
-mainClientes()
+mainTransferencias()
 
 
 
