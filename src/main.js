@@ -7,6 +7,7 @@ import NuevoClienteVista from "./vistas/nuevo-cliente/NuevoClienteVista.js"
 import NuevoGestorVista from "./vistas/nuevo-gestor/NuevoGestorVista.js"
 import ClientesVista from "./vistas/clientes/ClientesVista.js"
 import TransferenciasVista from "./vistas/transferencias/TransferenciasVista.js"
+import MensajesVista from "./vistas/mensajes/MensajesVista.js"
 
 
 // para controlar las rutas de la aplicación
@@ -22,6 +23,7 @@ const router = async () => {
         { path: "/nuevo-cliente", view: NuevoClienteVista, hasLogin: true },
         { path: "/clientes", view: ClientesVista, hasLogin: true },
         { path: "/transferencias", view: TransferenciasVista, hasLogin: true },
+        { path: "/mensajes", view: MensajesVista, hasLogin: true },
         { path: "/not-found", view: NotFoundVista }
     ]
 

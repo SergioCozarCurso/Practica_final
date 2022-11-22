@@ -1,0 +1,49 @@
+<div class="m-3 mt-5">
+    <h3 class="mb-3"> Enviar mensaje: </h3>
+
+    <form id="form">
+        <div class="mb-3 col-6">
+
+            <label for="destinatario" class="form-label mt-3">Destinatario: </label>
+            <select class="form-select" aria-label="Default select example" id="selector">
+                <option selected value="0">Selecciona un destinatario</option>
+            </select>
+
+            <label for="textoMensaje" class="form-label mt-3">Texto del mensaje: </label>
+            <textarea class="form-control" placeholder="Escriba aquí su mensaje..." id="textarea"></textarea>
+
+        </div>
+
+
+
+
+        <button class="btn btn-outline-primary" id="btnEnviar">Enviar mensaje</button>
+      </form>
+
+    
+</div>
+
+
+<div class="m-3 mt-5">
+    <h3 class="mt-3">Tus mensajes: </h3>
+    <br>
+
+    <div class="d-flex row">
+        <div class="col-5 me-4" style="border-right: 1px solid black;">
+            <h5 class="mt-2 mb-4"> <b> Enviados: </b></h5>
+            <ul class="list-group" id="enviados-container">   
+            </ul>
+        </div>
+        
+        <div class="col-5">
+            <h5 class="mt-2 mb-4"> <b> Recibidos: </b></h5>
+            <ul class="list-group" id="recibidos-container">   
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+
