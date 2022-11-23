@@ -7,9 +7,7 @@ function getPerfilCliente() {
     const querystring = window.location.search
     const params = new URLSearchParams(querystring)
     let idCliente = params.get("idCliente")
-    //let numImg    = params.get("img");
-
-
+    
     if(!idCliente){
         clienteContainer.innerHTML = ``
         seleccionarCliente();

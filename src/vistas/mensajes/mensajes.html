@@ -1,49 +1,67 @@
-<div class="m-3 mt-5">
-    <h3 class="mb-3"> Enviar mensaje: </h3>
-
-    <form id="form">
-        <div class="mb-3 col-6">
-
-            <label for="destinatario" class="form-label mt-3">Destinatario: </label>
-            <select class="form-select" aria-label="Default select example" id="selector">
-                <option selected value="0">Selecciona un destinatario</option>
-            </select>
-
-            <label for="textoMensaje" class="form-label mt-3">Texto del mensaje: </label>
-            <textarea class="form-control" placeholder="Escriba aquí su mensaje..." id="textarea"></textarea>
-
-        </div>
 
 
+<div class="d-flex row m-0" style="max-width: 100wh; height: 100%; overflow-x: hidden; overflow-y: hidden;">
 
-
-        <button class="btn btn-outline-primary" id="btnEnviar">Enviar mensaje</button>
-      </form>
-
+    <nav class="col-2 d-flex flex-column bg-light" style="min-height: 93vh; background-color: rgb(142, 142, 142);">
+        <ul class="d-flex flex-column p-0 pt-5 m-0" style="list-style: none;">
+            <li>
+                <button class="btn btn-outline-dark col-10" onclick="getMensajes()"><i class="bi bi-envelope"></i>  Mostrar mensajes</button>
+            </li>
+            <li class="mt-3">
+                <button class="btn btn-outline-dark col-10" onclick="enviarMensaje()"><i class="bi bi-send"></i>  Enviar mensaje</button>
+            </li>
+        </ul>
+    </nav>
     
-</div>
+    <div class="m-3 mt-2 col-9" id="enviar-mensaje-container">
+        <h3 class="mt-3"> Enviar mensaje: </h3>
+    
+        <form id="form">
+            <div class="mb-3 col-6">
+    
+                <label for="destinatario" class="form-label mt-3">Destinatario: </label>
+                <select class="form-select" aria-label="Default select example" id="selector">
+                    <option selected value="0">Selecciona un destinatario</option>
+                </select>
+    
+                <label for="textoMensaje" class="form-label mt-3">Texto del mensaje: </label>
+                <textarea class="form-control" placeholder="Escriba aquí su mensaje..." id="textarea"></textarea>
+    
+            </div>
+    
+    
+    
+    
+            <button class="btn btn-outline-primary" id="btnEnviar">Enviar mensaje</button>
+          </form>
 
-
-<div class="m-3 mt-5">
-    <h3 class="mt-3">Tus mensajes: </h3>
-    <br>
-
-    <div class="d-flex row">
-        <div class="col-5 me-4" style="border-right: 1px solid black;">
-            <h5 class="mt-2 mb-4"> <b> Enviados: </b></h5>
-            <ul class="list-group" id="enviados-container">   
-            </ul>
+    </div>
+    
+    
+    <div class="m-3 mt-2 col-9" id="mensajes-container" style="min-height: 100vh;">
+        <h3 class="mt-3">Tus mensajes: </h3>
+        <br>
+    
+        <div class="d-flex row" style="height: 100%;">
+            <div class="col-5 me-4">
+                <h5 class="mt-2 mb-4" > <b style="border-bottom: 1px solid black"> Enviados: </b></h5>
+                <ul class="list-group" id="enviados-container">   
+                </ul>
+            </div>
+            
+            <div class="col-5 ms-4">
+                <h5 class="mt-2 mb-4"> <b style="border-bottom: 1px solid black"> Recibidos: </b></h5>
+                <ul class="list-group" id="recibidos-container">   
+                </ul>
+            </div>
         </div>
-        
-        <div class="col-5">
-            <h5 class="mt-2 mb-4"> <b> Recibidos: </b></h5>
-            <ul class="list-group" id="recibidos-container">   
-            </ul>
+    
+        <div class="alert alert-success alert-dismissible fade show mt-5" role="alert" id="mensajeEnviadoAlert" 
+             style="display: none;">
+            <strong>Mensaje enviado correctamente!</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     </div>
-
+    
+    
 </div>
-
-
-
-

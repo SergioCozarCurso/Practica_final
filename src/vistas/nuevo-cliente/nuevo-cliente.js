@@ -17,7 +17,8 @@ function escucharClickBoton(){
             password: passwordInput,
             correo: correoInput,
             saldo: Number(saldoInput),
-            gestor: {id: gestor.id}
+            gestor: {id: gestor.id},
+            activo: true
         }
     
         const optionsPost = {

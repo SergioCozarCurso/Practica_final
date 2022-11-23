@@ -5,12 +5,16 @@ function mainClientes(){
     const btnMisClientes = document.getElementById("btnMisClientes")
 
    
+   
 
     function imprimirClientes(clientes){
         if(clientes.length>0){
+
+         
     
 
             clientes.forEach(cliente => {
+
                 let img = ''
 
                 if (cliente.id%2==0){
@@ -40,9 +44,9 @@ function mainClientes(){
                         </div>
                         <div class="d-flex justify-content-end p-1"  style="border-top: 1px solid black;">
                             <button class="btn btn-outline-secondary me-2" id="btnTransferencias" 
-                                onclick="window.location.href = '/perfil-cliente?idCliente=${cliente.id}&img=${cliente.id}'">Ver transferencias
+                                onclick="window.location.href = '/perfil-cliente?idCliente=${cliente.id}&img=${cliente.id}'">
+                                Ver perfil cliente
                             </button>
-                            <button class="btn btn-outline-danger">Eliminar</button>
                         </div>
                     </div>
                 `
@@ -66,6 +70,7 @@ function mainClientes(){
             clientesArr = clientes
             clientesContainer.innerHTML = ""
             
+        
            imprimirClientes(clientes);
     
            
@@ -74,7 +79,6 @@ function mainClientes(){
     }
     getClientes()
 
- 
 
     function getClientesGestor(){
 
@@ -90,6 +94,8 @@ function mainClientes(){
         imprimirClientes(clientesGestor)
     }
 
+    
+
     btnMisClientes.addEventListener("click", (_event) => {
         getClientesGestor()
     })
@@ -97,6 +103,7 @@ function mainClientes(){
     
 }
 mainClientes()
+
 
 
 

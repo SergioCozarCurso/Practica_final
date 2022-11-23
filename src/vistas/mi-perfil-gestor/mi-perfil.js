@@ -26,6 +26,9 @@ function getMiPerfil() {
             
             const contenedorPassword = document.getElementById("contenedor-password");
             contenedorPassword.innerHTML += gestor.password
+
+            const imgGestor = document.getElementById("imgGestor")
+            imgGestor.setAttribute("src", `http://xsgames.co/randomusers/assets/avatars/pixel/${gestor.id}.jpg`)
  
         })
         clickLogOut();
